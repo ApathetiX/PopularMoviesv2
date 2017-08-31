@@ -66,7 +66,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         if(isNetworkAvailable()) {
-            loadData(POPULAR_URL);
+            loadData();
+            // Pass popularMovie and highestRatedMovie to the MovieFragment
 
 
         }
@@ -78,9 +79,9 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This method loads the Movie data in the main UI thread using Volley
      **/
-    private void loadData(String url) {
+    private void loadData() {
         StringRequest popularRequest = new StringRequest(Request.Method.GET,
-                url,
+                POPULAR_URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -99,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
                 });
 
         StringRequest topRatedRequest = new StringRequest(Request.Method.GET,
-                url,
+                HIGHEST_RATED_URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
