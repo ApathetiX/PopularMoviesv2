@@ -28,7 +28,7 @@ import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
-    private static final String API_KEY = "0ec5cc72e1380fbed537bfe349bcc4fb";
+    private static final String API_KEY = "";
     private static final String POPULAR_URL = "http://api.themoviedb.org/3/movie/popular/?api_key=" + API_KEY;
     private static final String HIGHEST_RATED_URL = "http://api.themoviedb.org/3/movie/top_rated/?api_key=" + API_KEY;
     private static final String POPULAR_KEY = "popularKey";
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         if(isNetworkAvailable()) {
             loadData(POPULAR_URL);
 
-            
+
         }
 
 
