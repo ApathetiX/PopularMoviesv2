@@ -64,7 +64,8 @@ public class MainActivity extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
 
             switch (position) {
-
+                case 0: return getResources().getText(R.string.title_movie);
+                case 1: return getResources().getText(R.string.title_favorites);
             }
             return super.getPageTitle(position);
         }
