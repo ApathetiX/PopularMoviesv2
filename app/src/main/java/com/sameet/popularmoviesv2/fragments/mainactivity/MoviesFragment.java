@@ -33,7 +33,7 @@ import java.util.List;
  * A simple {@link Fragment} subclass.
  */
 public class MoviesFragment extends android.support.v4.app.Fragment {
-    private static final String API_KEY = "";
+    private static final String API_KEY = "0ec5cc72e1380fbed537bfe349bcc4fb";
     private static final String POPULAR_URL = "http://api.themoviedb.org/3/movie/popular/?api_key=" + API_KEY;
     private static final String HIGHEST_RATED_URL = "http://api.themoviedb.org/3/movie/top_rated/?api_key=" + API_KEY;
     private static final String POPULAR_KEY = "popularKey";
@@ -63,12 +63,13 @@ public class MoviesFragment extends android.support.v4.app.Fragment {
 
         mNetworkRequest = mNetworkRequest.getInstance(getActivity());
 
-        if (isNetworkAvailable()) {
-            loadData(POPULAR_URL);
-        }
 
         mMovieAdapter = new MovieAdapter(mMovies, getContext());
         mRecyclerView.setAdapter(mMovieAdapter);
+
+        if (isNetworkAvailable()) {
+            loadData(POPULAR_URL);
+        }
 
         // Inflate the layout for this fragment
         return mRecyclerView;
